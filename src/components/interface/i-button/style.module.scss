@@ -1,0 +1,39 @@
+@import '@/scss/variables.scss';
+
+.root {
+  cursor: pointer;
+
+  font-size: 20px;
+  
+  position: relative;
+  
+  border-radius: 50px;
+
+  color: #fff;
+  background: $color--gold-gradient;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    animation: move 1.5s infinite linear;
+
+    background: linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
+  }
+}
+
+@keyframes move {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}

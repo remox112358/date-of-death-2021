@@ -1,5 +1,5 @@
 <template>
   <div :class="styles.root">
-    <h1>HOME PAGE</h1>
+    <i-button>Да</i-button>
   </div>
 </template>
