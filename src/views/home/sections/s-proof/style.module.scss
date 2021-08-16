@@ -17,6 +17,16 @@
     background-position: center;
     background-image: url('../../../../assets/images/background.png');
 
+    @media screen and (max-width: $breakpoint--lg) {
+      height: 500px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      height: 330px;
+
+      background-image: url('../../../../assets/images/background--mobile.png');
+    }
+
     p {
       font-size: 25px;
       line-height: 35px;
@@ -25,9 +35,21 @@
       max-width: 380px;
 
       color: #fff;
+  
+      @media screen and (max-width: $breakpoint--sm) {
+        font-size: 16px;
+
+        line-height: 25px;
+
+        max-width: 220px;
+      }
 
       span {
         color: $color--gold;
+
+        @media screen and (max-width: $breakpoint--sm) {
+          font-size: 20px;
+        }
       }
     }
   }
