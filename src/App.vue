@@ -12,8 +12,6 @@
   *::before,
   *::after {
     box-sizing: border-box;
-
-    font-family: 'Poppins', sans-serif;
   }
 
   body {
@@ -25,7 +23,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    font-family: $font--roboto;
+    font-family: $font--roboto, $font--alternative;
 
     background-color: $color--background;
   }
