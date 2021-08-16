@@ -5,23 +5,107 @@
 
   padding: 130px 0;
 
+  overflow: hidden;
+
+  @media screen and (max-width: $breakpoint--lg) {
+    padding: 100px 0;
+  }
+
+  @media screen and (max-width: $breakpoint--md) {
+    padding: 75px 0;
+  }
+
+  @media screen and (max-width: $breakpoint--sm) {
+    padding: 50px 0;
+  }
+
   .decoration {
     position: absolute;
 
     color: rgba(#fff, .2);
 
+    @media screen and (max-width: $breakpoint--sm) {
+
+    }
+
     &--left {
       left: 150px;
       bottom: 50px;
+
+      @media screen and (max-width: $breakpoint--xl) {
+        left: -100px;
+        bottom: 50px;
+      }
+
+      @media screen and (max-width: $breakpoint--lg) {
+        left: 20px;
+        bottom: 100px;
+        
+        width: 120px;
+        height: 120px;
+      }
+
+      @media screen and (max-width: $breakpoint--md) {
+        left: 20px;
+        bottom: 100px;
+        
+        width: 90px;
+        height: 90px;
+      }
+
+      @media screen and (max-width: $breakpoint--sm) {
+        left: -15px;
+        bottom: 70px;
+        
+        width: 50px;
+        height: 50px;
+      }
     }
 
     &--right {
       right: 150px;
       bottom: 350px;
+
+      @media screen and (max-width: $breakpoint--xl) {
+        right: -110px;
+        bottom: 350px;
+      }
+
+      @media screen and (max-width: $breakpoint--lg) {
+        right: 20px;
+        bottom: 500px;
+        
+        width: 170px;
+        height: 95px;
+      }
+
+      @media screen and (max-width: $breakpoint--md) {
+        right: 20px;
+        bottom: 500px;
+        
+        width: 140px;
+        height: 75px;
+      }
+
+      @media screen and (max-width: $breakpoint--sm) {
+        right: -30px;
+        bottom: 240px;
+        
+        width: 80px;
+        height: 45px;
+      }
     }
   }
 
   .question {
     margin-bottom: 100px;
+
+    @media screen and (max-width: $breakpoint--lg) {
+      margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      margin-bottom: 60px;
+    }
   }
 }

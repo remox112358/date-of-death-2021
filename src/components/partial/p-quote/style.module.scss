@@ -7,6 +7,18 @@
 
   text-align: center;
 
+  svg {
+    @media screen and (max-width: $breakpoint--lg) {
+      width: 50px;
+      height: 20px;
+    }
+    
+    @media screen and (max-width: $breakpoint--sm) {
+      width: 40px;
+      height: 15px;
+    }
+  }
+
   p {
     font-size: 25px;
     line-height: 35px;
@@ -15,5 +27,19 @@
     margin: 80px 0;
 
     color: #fff;
+
+    @media screen and (max-width: $breakpoint--lg) {
+      font-size: 22px;
+      line-height: 30px;
+     
+      margin: 55px 0;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      font-size: 20px;
+      line-height: 28px;
+
+      margin: 35px 0;
+    }
   }
 }
