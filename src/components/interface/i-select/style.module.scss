@@ -1,0 +1,114 @@
+@import '@/scss/variables.scss';
+
+.root {
+  position: relative;
+
+  width: max-content;
+
+  .field {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 310px;
+    height: 70px;
+
+    font-size: 24px;
+
+    border-radius: 50px;
+
+    color: #000;
+    background-color: #cbcbcb;
+
+    cursor: pointer;
+
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: rgba(#cbcbcb, .8);
+    }
+
+    .toggler {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      top: 50%;
+      right: 30px;
+
+      transform: translateY(-50%);
+
+      cursor: pointer;
+
+      svg {
+        width: 25px;
+        height: 10px;
+      }
+    }
+  }
+
+  .dropdown {
+    width: 100%;
+
+    position: absolute;
+
+    bottom: 0;
+
+    transform: translateY(calc(100% + 10px));
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    background: #fff;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+
+    max-height: calc(5 * 45px);
+
+    &__item {
+      font-size: 18px;
+      text-align: center;
+
+      width: 100%;
+
+      padding: 10px;
+
+      cursor: pointer;
+
+      min-height: 45px;
+
+      transition: background-color .3s;
+
+      &:hover {
+        background: darken(#fff, 10%);
+      }
+
+      &:active {
+        background: darken(#fff, 20%);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 2px solid #efefef;
+      }
+    }
+  }
+}
