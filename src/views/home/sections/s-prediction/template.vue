@@ -7,7 +7,12 @@
         <div :class="styles.header__divider"></div>
         <span :class="styles.header__accuracy">Точность прогноза: 97%</span>
       </header>
-      <div :class="styles.content">
+      <div 
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+
+        :class="styles.content"
+      >
         <div :class="styles.content__image">
           <i-icon name="eye-circle" />
           <img :src="woman" alt="Woman">

@@ -1,7 +1,13 @@
 <template>
   <div :class="styles.root">
     <p-container>
-      <div :class="styles.placard">
+      <div 
+        data-aos="fade"
+        data-aos-delay="100"
+        data-aos-duration="2000"
+
+        :class="styles.placard"
+      >
         <div :class="styles.placard__image">
           <img :src="hands" alt="Hands">
         </div>

@@ -5,6 +5,9 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 import PComponents from './components/partial/autoload.js'
 import IComponents from './components/interface/autoload.js'
 
@@ -32,6 +35,7 @@ Object.keys(PComponents).forEach(name => {
  */
 app.use(store)
 app.use(router)
+app.AOS = new AOS.init()
 
 /**
  * App mount.

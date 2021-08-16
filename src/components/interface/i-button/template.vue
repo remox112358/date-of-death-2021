@@ -15,8 +15,11 @@
 
     v-on="$attrs"
   >
+    <div :class="styles.overlay"></div>
     <slot name="prepend" />
-    <slot />
+    <div :class="styles.content">
+      <slot />
+    </div>
     <slot name="append" />
   </component>
 </template>

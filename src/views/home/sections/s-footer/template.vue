@@ -17,7 +17,12 @@
       <i-icon name="decoration2" />
     </div>
     <p-container>
-      <div :class="styles.question">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+
+        :class="styles.question"
+      >
         <p-question 
           title="БОИТЕСЬ ЛИ ВЫ УМЕРЕТЬ?"
           subtitle="Вопрос 1 - 5"
@@ -34,7 +39,12 @@
           ]"
         />
       </div>
-      <div :class="styles.quote">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+
+        :class="styles.quote"
+      >
         <p-quote>
           Вы, конечно, умрете.<br>И все, с кем вы знакомы,<br>тоже однажды умрут.
         </p-quote>
