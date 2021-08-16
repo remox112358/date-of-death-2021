@@ -14,11 +14,11 @@ export default {
     },
     width: {
       type: String,
-      default: '25px',
+      default: null,
     },
     height: {
       type: String,
-      default: '25px',
+      default: null,
     }
   },
   setup({ name }) {

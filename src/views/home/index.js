@@ -3,6 +3,7 @@ import styles from './style.module.scss'
 
 import SProof from './sections/s-proof'
 import SSecret from './sections/s-secret'
+import SFooter from './sections/s-footer'
 import SPrediction from './sections/s-prediction'
 
 export default {
@@ -10,6 +11,7 @@ export default {
   components: {
     SProof,
     SSecret,
+    SFooter,
     SPrediction,
   },
   setup() {

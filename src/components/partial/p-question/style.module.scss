@@ -1,0 +1,37 @@
+@import '@/scss/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  color: $color--gold;
+
+  .title {
+    font-size: 25px;
+
+    margin-bottom: 45px;
+  }
+
+  .variants {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    > *:not(:last-child) {
+      margin-bottom: 35px;
+    }
+  }
+
+  .subtitle {
+    margin-top: 35px;
+
+    font-size: 16px;
+    line-height: 18.75px;
+    font-family: $font--roboto-light;
+
+    color: rgba(#fff, .6);
+  }
+}

@@ -1,0 +1,27 @@
+@import '@/scss/variables.scss';
+
+.root {
+  position: relative;
+
+  padding: 130px 0;
+
+  .decoration {
+    position: absolute;
+
+    color: rgba(#fff, .2);
+
+    &--left {
+      left: 150px;
+      bottom: 50px;
+    }
+
+    &--right {
+      right: 150px;
+      bottom: 350px;
+    }
+  }
+
+  .question {
+    margin-bottom: 100px;
+  }
+}
