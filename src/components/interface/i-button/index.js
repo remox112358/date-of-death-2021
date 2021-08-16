@@ -14,11 +14,11 @@ export default {
     },
     width: {
       type: String,
-      default: '310px',
+      default: null,
     },
     height: {
       type: String,
-      default: '70px',
+      default: null,
     }
   },
   setup({ href }) {

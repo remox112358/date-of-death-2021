@@ -1,7 +1,7 @@
 <template>
   <div :class="styles.root">
     <img :class="styles.glare" :src="glare" alt="Glare">
-    <p-container>
+    <p-container nopadding>
       <header :class="styles.header">
         <span :class="styles.header__title">Лучшие астологи и экстрасенсы Румынии</span>
         <div :class="styles.header__divider"></div>
@@ -9,21 +9,25 @@
       </header>
       <div :class="styles.content">
         <div :class="styles.content__image">
-          <i-icon
-            width="360px" 
-            height="360px" 
-            name="eye-circle" 
-          />
+          <i-icon name="eye-circle" />
           <img :src="woman" alt="Woman">
         </div>
-        <p :class="styles.content__question">
-          Вас беспокоит вопрос о том,<br>КОГДА ВЫ ПОКИНЕТЕ ЭТОТ МИР И ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ?
-        </p>
-        <div :class="styles.content__answers">
-          <i-button color="gold">Да</i-button>
-          <i-button color="gold">Нет</i-button>
+        <div :class="styles.content__question">
+          <p-question 
+            title="Вас беспокоит вопрос о том, КОГДА ВЫ ПОКИНЕТЕ ЭТОТ МИР И ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ?"
+            subtitle="Онлайн предсказание"
+            :variants="[
+              {
+                text: 'Да',
+                value: 1,
+              },
+              {
+                text: 'Нет',
+                value: 0,
+              }
+            ]"
+          />
         </div>
-        <span :class="styles.content__hint">Онлайн предсказание</span>
       </div>
     </p-container>
   </div>

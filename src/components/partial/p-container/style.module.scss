@@ -4,4 +4,10 @@
   
   margin: 0 auto;
   padding: 0 30px;
+
+  &--nopadding {
+    max-width: 1440px;
+
+    padding: 0;
+  }
 }

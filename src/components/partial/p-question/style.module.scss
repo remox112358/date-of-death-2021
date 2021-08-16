@@ -11,8 +11,23 @@
 
   .title {
     font-size: 25px;
+    line-height: 35px;
 
     margin-bottom: 45px;
+
+    @media screen and (max-width: $breakpoint--lg) {
+      font-size: 20px;
+      line-height: 30px;
+
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      font-size: 16px;
+      line-height: 25px;
+
+      margin-bottom: 20px;
+    }
   }
 
   .variants {
@@ -22,6 +37,14 @@
 
     > *:not(:last-child) {
       margin-bottom: 35px;
+
+      @media screen and (max-width: $breakpoint--lg) {
+        margin-bottom: 25px;
+      }
+
+      @media screen and (max-width: $breakpoint--sm) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -33,5 +56,19 @@
     font-family: $font--roboto-light;
 
     color: rgba(#fff, .6);
+
+    @media screen and (max-width: $breakpoint--lg) {
+      font-size: 14px;
+      line-height: 16px;
+     
+      margin-top: 25px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      font-size: 12px;
+      line-height: 14px;
+
+      margin-top: 20px;
+    }
   }
 }
