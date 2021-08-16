@@ -5,6 +5,7 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
+import PComponents from './components/partial/autoload.js'
 import IComponents from './components/interface/autoload.js'
 
 /**
@@ -17,6 +18,13 @@ const app = createApp(App)
  */
 Object.keys(IComponents).forEach(name => {
   app.component(name, IComponents[name])
+})
+
+/**
+ * Partial components.
+ */
+Object.keys(PComponents).forEach(name => {
+  app.component(name, PComponents[name])
 })
 
 /**

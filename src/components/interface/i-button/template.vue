@@ -10,7 +10,7 @@
 
     :class="{
       [styles.root]: true,
-      [styles[`${color}`]]: color,
+      [styles[`root--${color}`]]: color,
     }"
 
     v-on="$attrs"
