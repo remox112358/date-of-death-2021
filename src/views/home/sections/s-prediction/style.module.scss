@@ -9,6 +9,10 @@
 
   min-height: 940px;
 
+  @media screen and (max-width: $breakpoint--lg) {
+    min-height: auto;
+  }
+
   .header {
     display: flex;
     align-items: center;

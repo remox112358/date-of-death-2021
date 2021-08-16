@@ -3,6 +3,14 @@
 .root {
   padding: calc(70px + (135px / 2)) 0 70px;
 
+  @media screen and (max-width: $breakpoint--md) {
+    padding: calc(50px + (100px / 2)) 0 50px;
+  }
+
+  @media screen and (max-width: $breakpoint--sm) {
+    padding: calc(40px + (78px / 2)) 0 40px;
+  }
+
   .placard {
     position: relative;
 
@@ -10,14 +18,32 @@
     align-items: center;
     justify-content: center;
 
-    width: 450px;
+    width: 100%;
     height: 450px;
+    max-width: 450px;
 
     border-radius: 3px;
     border: 1px solid #fff;
 
     margin: 0 auto;
     padding: 0 40px;
+
+    @media screen and (max-width: $breakpoint--lg) {
+      height: 400px;
+      max-width: 400px;
+
+      padding: 0 15px;
+    }
+
+    @media screen and (max-width: $breakpoint--md) {
+      height: 350px;
+      max-width: 350px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      height: 250px;
+      max-width: 255px;
+    }
 
     &__image {
       position: absolute;
@@ -26,11 +52,21 @@
       left: 50%;
 
       width: 135px;
-      width: 135px;
+      height: 135px;
 
       overflow: hidden;
 
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $breakpoint--md) {
+        width: 100px;
+        height: 100px;
+      }
+
+      @media screen and (max-width: $breakpoint--sm) {
+        width: 78px;
+        height: 78px;
+      }
 
       img {
         width: 100%;
@@ -47,12 +83,33 @@
       text-align: center;
       font-family: $font--roboto;
 
+      margin-top: 20px;
+
       color: #fff;
 
+      @media screen and (max-width: $breakpoint--lg) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @media screen and (max-width: $breakpoint--md) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      @media screen and (max-width: $breakpoint--sm) {
+        font-size: 16px;
+        line-height: 25px;
+      }
+      
       span {
         color: $color--gold;
 
         font-family: $font--roboto-medium;
+
+        @media screen and (max-width: $breakpoint--sm) {
+          font-size: 20px;
+        }
       }
     }
   }
