@@ -115,11 +115,11 @@
     max-height: calc(5 * 45px);
 
     @media screen and (max-width: $breakpoint--lg) {
-      max-height: calc(5 * 35px);
+      max-height: calc(4 * 35px);
     }
    
     @media screen and (max-width: $breakpoint--sm) {
-      max-height: calc(5 * 30px);
+      max-height: calc(4 * 30px);
     }
 
     &::-webkit-scrollbar {
