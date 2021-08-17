@@ -21,15 +21,11 @@
           <p-question 
             title="Вас беспокоит вопрос о том, КОГДА ВЫ ПОКИНЕТЕ ЭТОТ МИР И ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ?"
             subtitle="Онлайн предсказание"
+
+            :callback="answerHandler"
             :variants="[
-              {
-                text: 'Да',
-                value: 1,
-              },
-              {
-                text: 'Нет',
-                value: 0,
-              }
+              { text: 'Да', value: 1 },
+              { text: 'Нет', value: 0 }
             ]"
           />
         </div>
