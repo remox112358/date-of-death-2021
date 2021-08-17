@@ -50,7 +50,7 @@
     <div :class="styles.main">
       <p-container>
         <div :class="styles.question" v-if="step <= 5">
-         <p-question 
+          <p-question
             :title="stepData.title"
             :callback="answerHandler"
             :variants="stepData.variants"
