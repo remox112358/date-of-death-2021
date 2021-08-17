@@ -1,5 +1,10 @@
 <template>
-  <div :class="styles.root">
+  <div
+    :class="{
+      [styles.root]: true,
+      [styles['root--full']]: full,
+    }"
+  >
     <span :class="styles.title">{{ title }}</span>
     <div :class="styles.variants">
       <i-button 

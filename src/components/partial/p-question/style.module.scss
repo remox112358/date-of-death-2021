@@ -71,4 +71,20 @@
       margin-top: 20px;
     }
   }
+
+  &--full {
+    height: 100%;
+
+    @media screen and (max-width: $breakpoint--sm) {
+      justify-content: center;
+    }
+
+    .subtitle {
+      margin-top: auto;
+
+      @media screen and (max-width: $breakpoint--sm) {
+        margin-top: 40px;
+      }
+    }
+  }
 }

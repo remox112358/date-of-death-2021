@@ -16,6 +16,10 @@ export default {
       type: String,
       default: null,
     },
+    full: {
+      type: Boolean,
+      default: null,
+    },
   },
   setup() {
 
