@@ -26,29 +26,11 @@
     <div :class="styles.main">
       <p-container>
         <div :class="styles.question">
-          <p-question 
-            title="КОГДА ВЫ ЧУВСТВУЕТЕ СЕБЯ НАИБОЛЕЕ КОМФОРТНО?"
-            subtitle="Вопрос 2-5"
-            :variants="[
-              {
-                text: 'Утро',
-                value: 1,
-              },
-              {
-                text: 'День',
-                value: 2,
-              },
-              {
-                text: 'Вечер',
-                value: 3,
-              },
-              {
-                text: 'Ночь',
-                value: 4,
-              }
-            ]"
-            full
-          />
+          <step1 v-if="step === 1" />
+          <step2 v-if="step === 2" />
+          <step3 v-if="step === 3" />
+          <step4 v-if="step === 4" />
+          <step5 v-if="step === 5" />
         </div>
       </p-container>
     </div>

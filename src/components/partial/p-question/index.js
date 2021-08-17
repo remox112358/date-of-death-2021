@@ -12,6 +12,10 @@ export default {
       type: Array,
       default: [],
     },
+    callback: {
+      type: Function,
+      default: null,
+    },
     subtitle: {
       type: String,
       default: null,

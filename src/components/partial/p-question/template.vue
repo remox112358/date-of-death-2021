@@ -13,6 +13,8 @@
         :key="variant.value"
 
         v-for="variant in variants"
+
+        @click="() => callback(variant.value)"
       >{{ variant.text }}</i-button>
     </div>
     <span :class="styles.subtitle">{{ subtitle }}</span>

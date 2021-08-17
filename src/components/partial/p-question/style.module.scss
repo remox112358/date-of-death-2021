@@ -73,10 +73,8 @@
   }
 
   &--full {
-    height: 100%;
-
     @media screen and (max-width: $breakpoint--sm) {
-      justify-content: center;
+      align-items: center;
     }
 
     .subtitle {
