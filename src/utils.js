@@ -22,7 +22,7 @@ export const generateRandomString = (length = 12) => {
  * @param {Number} year 
  * @returns {Array}
  */
-export const getDaysOptions = (month, year) => {
+export const getDaysOptions = (month = 1, year = new Date().getFullYear()) => {
   const daysCount = new Date(year, month, 0).getDate() 
   
   let options = []
@@ -71,4 +71,16 @@ export const getYearsOptions = () => {
   }
 
   return options
+}
+
+/**
+ * Determines that day is exist in month.
+ * 
+ * @param {Number} day 
+ * @param {Number} month
+ * @param {Number} year
+ * @returns {Boolean} 
+ */
+export const dayExistInMonth = (day, month, year) => {
+  return day < getDaysOptions(month, year).length
 }

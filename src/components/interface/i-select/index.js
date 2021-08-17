@@ -1,5 +1,6 @@
 import { 
   ref, 
+  watch,
   onMounted,
   onUnmounted 
 } from 'vue'
@@ -13,7 +14,7 @@ export default {
   extends: template,
   props: {
     modelValue: {
-      type: Object,
+      type: [String, Number],
       default: null,
     },
     options: {
@@ -23,11 +24,16 @@ export default {
     placeholder: {
       type: String,
       default: 'Выберите',
-    }
+    },
+    invalid: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, { emit }) {
 
     const root = ref(null)
+    const selected = ref(null)
     const toggleStatus = ref(false)
     const componentId = generateRandomString()
 
@@ -53,7 +59,8 @@ export default {
     }
 
     const select = option => {
-      emit('update:modelValue', option)
+      emit('update:modelValue', option.value)
+      selected.value = option.text
 
       close()
     }
@@ -62,6 +69,7 @@ export default {
       styles,
 
       root,
+      selected,
       componentId,
       toggleStatus,
 

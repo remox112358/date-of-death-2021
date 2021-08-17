@@ -23,6 +23,7 @@
           placeholder="День"
 
           :options="dayOptions"
+          :invalid="dayMeta.validated && !dayMeta.valid"
 
           v-model="day"
         />
@@ -30,6 +31,7 @@
           placeholder="Месяц"
           
           :options="monthOptions"
+          :invalid="monthMeta.validated && !monthMeta.valid"
 
           v-model="month"
         />
@@ -37,6 +39,7 @@
           placeholder="Год"
           
           :options="yearOptions"
+          :invalid="yearMeta.validated && !yearMeta.valid"
 
           v-model="year"
         />

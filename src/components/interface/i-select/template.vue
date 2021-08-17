@@ -3,10 +3,13 @@
     ref="root"
 
     :id="componentId"
-    :class="styles.root"
+    :class="{
+      [styles.root]: true,
+      [styles['root--invalid']]: invalid,
+    }"
   >
     <div :class="styles.field" @click="toggle">
-      <span :class="styles.selected">{{ modelValue?.text ?? placeholder }}</span>
+      <span :class="styles.selected">{{ selected ?? placeholder }}</span>
       <div :class="styles.toggler">
         <i-icon name="arrow-down" />
       </div>

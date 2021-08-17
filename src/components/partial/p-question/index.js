@@ -1,9 +1,13 @@
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useForm, useField } from 'vee-validate'
+
+import schemas from '@/config/schemas'
 
 import { 
   getDaysOptions,
   getMonthsOptions,
-  getYearsOptions
+  getYearsOptions,
+  dayExistInMonth
 } from '../../../utils'
 
 import template from './template'
@@ -37,28 +41,103 @@ export default {
       default: 'default',
     },
   },
-  setup() {
+  setup({ callback }) {
 
-    const day   = ref({})
-    const year  = ref({})
-    const month = ref({})
-
-    const dayOptions = getDaysOptions(8, 2021)
+    const dayOptions = ref(getDaysOptions())
     const monthOptions = getMonthsOptions()
     const yearOptions = getYearsOptions()
 
+    /**
+     * Validation schema. 
+     */
+    const schema = schemas.birthdate
+
+    /**
+     * Form context. 
+     */
+    const { meta, setErrors, resetForm } = useForm({
+      validationSchema: schema,
+    })
+
+    /**
+     * Form fields. 
+     */
+    const {
+      value: day,
+      meta: dayMeta
+    } = useField('day')
+
+    const {
+      value: month,
+      meta: monthMeta
+    } = useField('month')
+
+    const {
+      value: year,
+      meta: yearMeta
+    } = useField('year')
+
+    /**
+     * Watcher for month value.
+     */
+    watch(month, value => {
+      if (year.value) {
+        dayOptions.value = getDaysOptions(month.value, value)
+
+        if (day.value && !dayExistInMonth(day.value, value, year.value))
+          day.value = null
+      }
+    })
+
+    /**
+     * Watcher for year value.
+     */
+    watch(year, value => {
+      if (month.value) {
+        dayOptions.value = getDaysOptions(month.value, value)
+
+        if (day.value && !dayExistInMonth(day.value, month.value, value))
+          day.value = null
+      }
+    })
+
+    /**
+     * Handler of birthdate select.
+     */
     const birthdateHandler = () => {
-      console.log('birthdate handler')
+      validateEmptyFields()
+
+      if (!meta.value.valid) return
+
+      callback({
+        day: day.value,
+        year: year.value,
+        month: month.value,
+      })
+    }
+    
+    /**
+     * Validates empty fields.
+     */
+    const validateEmptyFields = () => {
+      dayMeta.validated = true
+      monthMeta.validated = true
+      yearMeta.validated = true
     }
 
     return {
       styles,
 
       day,
-      year,
-      month,
+      dayMeta,
       dayOptions,
+
+      year,
+      yearMeta,
       yearOptions,
+
+      month,
+      monthMeta,
       monthOptions,
 
       birthdateHandler,

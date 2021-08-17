@@ -5,6 +5,14 @@
 
   width: max-content;
 
+  &--invalid {
+    .field {
+      box-shadow: inset 0 1px 10px 0px #000;
+
+      border: 1px solid #EE5353;
+    }
+  }
+
   .field {
     position: relative;
 
