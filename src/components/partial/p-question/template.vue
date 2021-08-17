@@ -7,15 +7,41 @@
   >
     <span :class="styles.title">{{ title }}</span>
     <div :class="styles.variants">
-      <i-button 
-        color="gold"
+      <template v-if="mode === 'default'">
+        <i-button 
+          color="gold"
 
-        :key="variant.value"
+          :key="variant.value"
 
-        v-for="variant in variants"
+          v-for="variant in variants"
 
-        @click="() => callback(variant.value)"
-      >{{ variant.text }}</i-button>
+          @click="() => callback(variant.value)"
+        >{{ variant.text }}</i-button>
+      </template>
+      <template v-if="mode === 'birthdate'">
+        <i-select 
+          placeholder="День"
+
+          :options="dayOptions"
+
+          v-model="day"
+        />
+        <i-select 
+          placeholder="Месяц"
+          
+          :options="monthOptions"
+
+          v-model="month"
+        />
+        <i-select 
+          placeholder="Год"
+          
+          :options="yearOptions"
+
+          v-model="year"
+        />
+        <i-button color="gold" @click="birthdateHandler">Далее</i-button>
+      </template>
     </div>
     <span :class="styles.subtitle">{{ subtitle }}</span>
   </div>

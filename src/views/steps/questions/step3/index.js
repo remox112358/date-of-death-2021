@@ -1,4 +1,3 @@
-import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 import template from './template'
@@ -12,11 +11,6 @@ export default {
      */
     const store = useStore()
 
-    const variants = [
-      { text: 'Да', value: 1 },
-      { text: 'Нет', value: 0 },
-    ]
-
     /**
      * Handler for question callback.
      * 
@@ -28,7 +22,6 @@ export default {
     }
 
     return {
-      variants,
       answerHandler,
     }
 

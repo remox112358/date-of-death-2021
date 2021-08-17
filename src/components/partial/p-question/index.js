@@ -1,3 +1,11 @@
+import { ref } from 'vue'
+
+import { 
+  getDaysOptions,
+  getMonthsOptions,
+  getYearsOptions
+} from '../../../utils'
+
 import template from './template'
 import styles from './style.module.scss'
 
@@ -24,11 +32,36 @@ export default {
       type: Boolean,
       default: null,
     },
+    mode: {
+      type: String,
+      default: 'default',
+    },
   },
   setup() {
 
+    const day   = ref({})
+    const year  = ref({})
+    const month = ref({})
+
+    const dayOptions = getDaysOptions(8, 2021)
+    const monthOptions = getMonthsOptions()
+    const yearOptions = getYearsOptions()
+
+    const birthdateHandler = () => {
+      console.log('birthdate handler')
+    }
+
     return {
       styles,
+
+      day,
+      year,
+      month,
+      dayOptions,
+      yearOptions,
+      monthOptions,
+
+      birthdateHandler,
     }
 
   }
