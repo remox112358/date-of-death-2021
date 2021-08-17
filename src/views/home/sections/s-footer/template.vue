@@ -24,19 +24,10 @@
         :class="styles.question"
       >
         <p-question 
-          title="БОИТЕСЬ ЛИ ВЫ УМЕРЕТЬ?"
-          subtitle="Вопрос 1 - 5"
-          
-          :variants="[
-            {
-              text: 'Да',
-              value: 1,
-            },
-            {
-              text: 'Нет',
-              value: 0,
-            }
-          ]"
+          :title="stepData.title"
+          :callback="answerHandler"
+          :subtitle="stepData.subtitle"
+          :variants="stepData.variants"
         />
       </div>
       <div
