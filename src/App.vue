@@ -1,6 +1,7 @@
 <template>
   <router-view />
   <i-loader v-model="loading" />
+  <i-recording v-model="recording" />
 </template>
 
 <script>
@@ -13,9 +14,11 @@
 
       const store = useStore()
       const loading = computed(() => store.state.loading)
+      const recording = computed(() => store.state.recording)
 
       return {
         loading,
+        recording,
       }
 
     }

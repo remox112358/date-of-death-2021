@@ -1,9 +1,15 @@
+@import '@/scss/variables.scss';
+
 .root {
   width: 100%;
   max-width: calc(1440px + (2 * 30px));
   
   margin: 0 auto;
   padding: 0 30px;
+
+  @media screen and (max-width: $breakpoint--sm) {
+    padding: 0 10px;
+  }
 
   &--nopadding {
     max-width: 1440px;

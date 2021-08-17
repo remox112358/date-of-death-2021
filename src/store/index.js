@@ -6,6 +6,7 @@ export default createStore({
 
   state: () => ({
     loading: false,
+    recording: false,
   }),
 
   mutations: {
@@ -18,6 +19,16 @@ export default createStore({
      */
     setLoading: (state, payload) => {
       state.loading = payload
+    },
+
+    /**
+     * Recording status mutation.
+     * 
+     * @param {Object} state 
+     * @param {Boolean} payload 
+     */
+    setRecording: (state, payload) => {
+      state.recording = payload
     },
 
   },

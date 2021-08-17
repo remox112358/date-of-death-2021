@@ -18,6 +18,21 @@ export default {
      */
     step: state => {
       return state.step
+    },
+
+    /**
+     * Returns age of person.
+     * 
+     * @param {Object} state 
+     * @returns {Number}
+     */
+    age: state => {
+      const { day, month, year } = state.answers[2]
+      
+      const currentDate = new Date()
+      const birthdate = new Date(`${year}/${month}/${day}`)
+
+      return Math.floor((currentDate - birthdate) / 31557600000)
     }
 
   },

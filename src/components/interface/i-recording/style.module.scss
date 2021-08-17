@@ -1,0 +1,71 @@
+@import '@/scss/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 9999;
+
+  background-color: $color--background;
+
+  svg {
+    width: 200px;
+    height: 100px;
+
+    margin-bottom: 40px;
+    
+    @media screen and (max-width: $breakpoint--sm) {
+      width: 150px;
+      height: 70px;
+    }
+  }
+
+  .percent {
+    font-size: 28px;
+    line-height: 34px;
+    font-family: $font--roboto-light;
+
+    color: rgba(#fff, .6);
+
+    margin-top: 20px;
+
+    @media screen and (max-width: $breakpoint--lg) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .hint {
+    margin-top: 20px;
+    
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    font-family: $font--roboto-light;
+
+    color: rgba(#fff, .6);
+
+    @media screen and (max-width: $breakpoint--lg) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: $breakpoint--sm) {
+      font-size: 12px;
+
+      margin-top: 15px;
+    }
+  }
+}

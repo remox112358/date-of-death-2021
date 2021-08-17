@@ -1,0 +1,13 @@
+@import '@/scss/variables.scss';
+
+.root {
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  .bar {
+    height: 100%;
+
+    max-width: 100%;
+  }
+}

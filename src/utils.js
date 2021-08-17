@@ -63,7 +63,7 @@ export const getYearsOptions = () => {
 
   let options = []
 
-  for (let i = currentYear - 99; i <= currentYear; i++) {
+  for (let i = currentYear; i >= currentYear - 99; i--) {
     options.push({
       text: String(i),
       value: i,

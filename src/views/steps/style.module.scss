@@ -95,7 +95,7 @@
 
     border-bottom: 1px solid rgba(#fff, .2);
 
-    p {
+    .header__message {
       max-width: 420px;
 
       margin: 0 auto;
@@ -120,6 +120,48 @@
       @media screen and (max-width: $breakpoint--sm) {
         font-size: 14px;
         line-height: 20px;
+
+        max-width: 260px;
+      }
+
+      &--cloud {
+        position: relative;
+
+        color: #202024;
+        background: #fff;
+
+        padding: 20px;
+
+        border-radius: 5px;
+        
+        @media screen and (max-width: $breakpoint--sm) {
+          padding: 10px;
+        }
+
+        &::after {
+          content: '';
+
+          position: absolute;
+
+          bottom: 0;
+          right: 20px;
+
+          width: 20px;
+          height: 20px;
+
+          transform: translateY(100%) skew(-25.5deg);
+          
+          background: linear-gradient(45deg, transparent 50%, #fff 50%);
+
+          @media screen and (max-width: $breakpoint--sm) {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+      &--final {
+        font-family: $font--roboto;
       }
     }
   }
@@ -128,7 +170,7 @@
     padding: 70px 0 30px;
 
     @media screen and (max-width: $breakpoint--sm) {
-      padding: 30px 0;
+      padding: 20px 0;
     }
 
     > div {
@@ -148,6 +190,119 @@
       @media screen and (max-width: $breakpoint--sm) {
         display: flex;
         align-items: center;
+      }
+    }
+  }
+
+  &--final {
+    .header {
+      border: none;
+    }
+
+    .decoration {
+      display: none;
+    }
+
+    .result {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      height: 100%;
+
+      &__info {
+        color: #fff;
+        
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+        font-family: $font--roboto-light;
+
+        max-width: 500px;
+
+        @media screen and (max-width: $breakpoint--lg) {
+          font-size: 20px;
+          line-height: 25px;
+        }
+  
+        @media screen and (max-width: $breakpoint--md) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+  
+        @media screen and (max-width: $breakpoint--sm) {
+          font-size: 14px;
+          line-height: 20px;
+
+          max-width: 220px;
+        }
+      }
+
+      &__placard {
+        max-width: 480px;
+
+        padding: 50px;
+
+        margin: 30px 0;
+
+        color: $color--gold;
+
+        font-size: 26px;
+        line-height: 35px;
+        text-align: center;
+
+        border-radius: 3px;
+        border: 1px solid #fff;
+
+        @media screen and (max-width: $breakpoint--lg) {
+          font-size: 22px;
+          line-height: 30px;
+
+          padding: 25px;
+        }
+  
+        @media screen and (max-width: $breakpoint--md) {
+          font-size: 18px;
+          line-height: 28px;
+
+          max-width: 350px;
+
+          padding: 20px;
+
+          button {
+            width: 200px;
+            height: 40px;
+          }
+        }
+  
+        @media screen and (max-width: $breakpoint--sm) {
+          font-size: 16px;
+          line-height: 25px;
+
+          max-width: 260px;
+
+          padding: 10px;
+
+          margin: 20px 0;
+        }
+      }
+
+      button {
+        width: 100%;
+        height: 70px;
+        max-width: 400px;
+
+        margin-top: auto;
+
+        @media screen and (max-width: $breakpoint--md) {
+          height: 60px;
+          max-width: 275px;
+        }
+
+        @media screen and (max-width: $breakpoint--sm) {
+          height: 50px;
+          max-width: 250px;
+        }
       }
     }
   }
