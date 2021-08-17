@@ -1,6 +1,28 @@
 <template>
   <router-view />
+  <i-loader v-model="loading" />
 </template>
+
+<script>
+
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+
+  export default {
+    setup() {
+
+      const store = useStore()
+      const loading = computed(() => store.state.loading)
+
+      return {
+        loading,
+      }
+
+    }
+  }
+
+</script>
+
 
 <style lang="scss">
 
