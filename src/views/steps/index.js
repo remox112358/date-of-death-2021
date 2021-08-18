@@ -6,8 +6,10 @@ import {
 
 import { useStore } from 'vuex'
 
-import questions from './questions'
+import questions from './questions.json'
 import messages from './messages.json'
+
+import { getTomorrowDate } from '@/utils'
 
 import template from './template'
 import styles from './style.module.scss'
@@ -22,6 +24,7 @@ export default {
     const store = useStore()
 
     const message = ref(null)
+    const tomorrow = getTomorrowDate()
     const age = computed(() => store.getters['steps/age'])
     const step = computed(() => store.getters['steps/step'])
     const stepData = computed(() => questions[step.value - 1])
@@ -65,6 +68,7 @@ export default {
       step,
       message,
       stepData,
+      tomorrow,
 
       answerHandler,
     }

@@ -84,3 +84,24 @@ export const getYearsOptions = () => {
 export const dayExistInMonth = (day, month, year) => {
   return day < getDaysOptions(month, year).length
 }
+
+function getTomorrow() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1); // even 32 is acceptable
+  return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
+}
+
+/**
+ * Returns tomorrow date.
+ */
+export const getTomorrowDate = () => {
+  const tomorrow = new Date()
+
+  tomorrow.setDate(tomorrow.getDate() + 1)
+
+  const tomorrowYear  = tomorrow.getFullYear()
+  const tomorrowDay   = tomorrow.getDate() < 10 ? '0' + tomorrow.getDate() : tomorrow.getDate()
+  const tomorrowMonth = tomorrow.getMonth() + 1 < 10 ? '0' + (tomorrow.getMonth() + 1) : tomorrow.getMonth() + 1 
+
+  return `${tomorrowDay}.${tomorrowMonth}.${tomorrowYear}`
+}

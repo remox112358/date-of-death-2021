@@ -195,6 +195,21 @@
   }
 
   &--final {
+    overflow: auto;
+
+    height: auto;
+    max-height: auto;
+
+    .main {
+      > div {
+        height: auto;
+      }
+    }
+
+    .terms {
+      margin-top: 15px;
+    }
+
     .header {
       border: none;
     }
@@ -283,7 +298,7 @@
 
           padding: 10px;
 
-          margin: 20px 0;
+          margin: 15px 0;
         }
       }
 
@@ -292,7 +307,7 @@
         height: 70px;
         max-width: 400px;
 
-        margin-top: auto;
+        margin-top: 30px;
 
         @media screen and (max-width: $breakpoint--md) {
           height: 60px;
@@ -302,6 +317,8 @@
         @media screen and (max-width: $breakpoint--sm) {
           height: 50px;
           max-width: 250px;
+
+          margin-top: 20px;
         }
       }
     }

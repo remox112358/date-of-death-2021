@@ -4,6 +4,8 @@
     <s-secret />
     <s-proof />
     <s-footer />
-    <p-terms />
+    <div :class="styles.terms">
+      <p-terms />
+    </div>
   </div>
 </template>

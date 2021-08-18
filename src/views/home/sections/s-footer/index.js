@@ -2,7 +2,7 @@ import { useStore } from 'vuex'
 
 import router from '@/router'
 
-import questions from '@/views/steps/questions.js'
+import questions from '@/views/steps/questions.json'
 
 import template from './template'
 import styles from './style.module.scss'
