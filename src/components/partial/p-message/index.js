@@ -20,21 +20,36 @@ export default {
   },
   setup() {
 
+    /**
+     * Global store.
+     */
     const store = useStore()
-
+    
+    /**
+     * Data and states.
+     */
+    const step = computed(() => store.state.steps.step)
+    
     const showStatus      = ref(false)
     const showStatusClass = ref(false)
 
-    const step = computed(() => store.state.steps.step)
-
+    /**
+     * Calls on mount action.
+     */
     onMounted(() => {
       updateShow()
     })
 
+    /**
+     * Watcher for step value.
+     */
     watch(step, value => {
       updateShow()
     })
 
+    /**
+     * Updates the message showStatus.
+     */
     const updateShow = async () => {
       if (!showStatus.value) {
         show()
@@ -47,6 +62,9 @@ export default {
       }
     }
 
+    /**
+     * Show action.
+     */
     const show = async () => {
       showStatus.value = true
       
@@ -55,6 +73,11 @@ export default {
       showStatusClass.value = true
     }
     
+    /**
+     * Hide action.
+     * 
+     * @param {Boolean} withoutDelay 
+     */
     const hide = async (withoutDelay = false) => {
       showStatusClass.value = false
 

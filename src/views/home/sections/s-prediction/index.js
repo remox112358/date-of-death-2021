@@ -10,6 +10,11 @@ export default {
   extends: template,
   setup() {
 
+    /**
+     * Handler of answer callback.
+     * 
+     * @param {Any} answer 
+     */
     const answerHandler = answer => {
       router.push('steps')
     }

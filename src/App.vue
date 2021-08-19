@@ -12,8 +12,15 @@
   export default {
     setup() {
 
+      /**
+       * Global store.
+       */
       const store = useStore()
-      const loading = computed(() => store.state.loading)
+
+      /**
+       * Data and states.
+       */
+      const loading   = computed(() => store.state.loading)
       const recording = computed(() => store.state.recording)
 
       return {

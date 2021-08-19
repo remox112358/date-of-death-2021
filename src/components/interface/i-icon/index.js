@@ -23,8 +23,14 @@ export default {
   },
   setup({ name }) {
 
+    /**
+     * xlink for icon.
+     */
     const xlink = computed(() => `${icons}#${name}`)
 
+    /**
+     * Classes for svg element.
+     */
     const clsx = reactive({
       [styles.root]: true,
       [`icon--${name}`]: name,

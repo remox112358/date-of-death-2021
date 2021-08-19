@@ -43,9 +43,13 @@ export default {
   },
   setup({ callback }) {
 
-    const dayOptions = ref(getDaysOptions())
+    /**
+     * Data and states.
+     */
+    const yearOptions  = getYearsOptions()
     const monthOptions = getMonthsOptions()
-    const yearOptions = getYearsOptions()
+    
+    const dayOptions = ref(getDaysOptions())
 
     /**
      * Validation schema. 

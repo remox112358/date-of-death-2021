@@ -23,6 +23,9 @@ export default {
   },
   setup({ href }) {
 
+    /**
+     * Determine the tag of component.
+     */
     const tag = href ? 'a' : 'button'
 
     return {

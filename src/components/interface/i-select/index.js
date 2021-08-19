@@ -32,23 +32,49 @@ export default {
   },
   setup(props, { emit }) {
 
-    const root = ref(null)
-    const selected = ref(null)
+    /**
+     * Data and states.
+     */
+    const root         = ref(null)
+    const selected     = ref(null)
     const toggleStatus = ref(false)
+    
     const componentId = generateRandomString()
 
+    /**
+     * Dropdown open action.
+     */
     const open = () => toggleStatus.value = true
+    
+    /**
+     * Dropdown close action.
+     */
     const close = () => toggleStatus.value = false
+    
+    /**
+     * Dropdown toggle action.
+     */
     const toggle = () => toggleStatus.value = !toggleStatus.value
 
+    /**
+     * Calls on component mount action.
+     */
     onMounted(() => {
       document.addEventListener('click', clickHandler)
     })
 
+    /**
+     * Calls on component unmount action.
+     */
     onUnmounted(() => {
       document.removeEventListener('click', clickHandler)
     })
 
+    /**
+     * Handler of click event.
+     * 
+     * @param {Object} event 
+     */
     const clickHandler = event => {
       if (toggleStatus.value) {
         const inArea = event.target.closest(`#${componentId}`)
@@ -58,8 +84,14 @@ export default {
       }
     }
 
+    /**
+     * Handler for select action.
+     * 
+     * @param {Object} option 
+     */
     const select = option => {
       emit('update:modelValue', option.value)
+      
       selected.value = option.text
 
       close()

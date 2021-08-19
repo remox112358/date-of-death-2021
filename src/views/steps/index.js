@@ -23,12 +23,17 @@ export default {
      */
     const store = useStore()
 
-    const message = ref(null)
-    const tomorrow = getTomorrowDate()
-    const data = computed(() => store.state.steps.data)
-    const age = computed(() => store.getters['steps/age'])
-    const step = computed(() => store.getters['steps/step'])
+    /**
+     * Data and states.
+     */
+    const data     = computed(() => store.state.steps.data)
+    const age      = computed(() => store.getters['steps/age'])
+    const step     = computed(() => store.getters['steps/step'])
     const stepData = computed(() => questions[step.value - 1])
+    
+    const message = ref(null)
+
+    const tomorrow = getTomorrowDate()
 
     /**
      * Watcher for step value.
@@ -43,11 +48,15 @@ export default {
           message.value = messages[2]
       }
 
-      if (value === 6) {
+      if (value === 6)
         message.value = messages[3]
-      }
     })
     
+    /**
+     * Handler for answer callback.
+     * 
+     * @param {Any} answer 
+     */
     const answerHandler = async answer => {
       if (step.value === 3) {
         store.commit('setLoading', true)
@@ -57,14 +66,16 @@ export default {
         store.commit('setLoading', false)
       }
 
-      if (step.value === 5) {
+      if (step.value === 5)
         store.commit('setRecording', true)
-      }
 
       store.commit('steps/setAnswer', answer)
       store.commit('steps/goToNextStep')
     }
 
+    /**
+     * Data fetching initialization.
+     */
     const fetchData = async () => {
       await store.dispatch('steps/fetch')
     }

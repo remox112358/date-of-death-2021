@@ -19,10 +19,17 @@ export default {
      */
     const store = useStore()
 
-    const percent = ref(0)
-    const intervalIndex = ref(null) 
+    /**
+     * Data and states.
+     */
     const status = computed(() => store.state.recording)
+    
+    const percent       = ref(0)
+    const intervalIndex = ref(null)
 
+    /**
+     * Watcher for status value.
+     */
     watch(status, value => {
       if (value) {
         intervalIndex.value = setInterval(() => {
@@ -31,6 +38,9 @@ export default {
       }
     })
 
+    /**
+     * Watcher for percent value.
+     */
     watch(percent, value => {
       if (value === 100) {
         clearTimeout(intervalIndex.value)

@@ -1,10 +1,12 @@
 import axios from 'axios'
 
+import appConfig from '@/config/app'
+
 export default {
   namespaced: true,
 
   state: () => ({
-    step: 6,
+    step: 1,
     data: null,
     answers: [
       // ...
@@ -75,12 +77,17 @@ export default {
 
   actions: {
     
+    /**
+     * Data fetching action.
+     * 
+     * @param {Object} context
+     */
     fetch: context => {
       return new Promise((resolve, reject) => {
         context.commit('setLoading', true, { root: true })
 
         axios
-          .get('https://swapi.dev/api/people/1/')
+          .get(appConfig.api)
           .then(response => {
             context.commit('setData', response.data)
 

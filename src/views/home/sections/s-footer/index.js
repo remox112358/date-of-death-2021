@@ -11,10 +11,21 @@ export default {
   extends: template,
   setup() {
 
+    /**
+     * Global store.
+     */
     const store = useStore()
 
+    /**
+     * Data and states.
+     */
     const stepData = questions[0]
 
+    /**
+     * Handler of answer callback.
+     * 
+     * @param {Any} answer 
+     */
     const answerHandler = answer => {
       router.push('steps')
 
