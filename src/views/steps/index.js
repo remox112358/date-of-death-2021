@@ -25,6 +25,7 @@ export default {
 
     const message = ref(null)
     const tomorrow = getTomorrowDate()
+    const data = computed(() => store.state.steps.data)
     const age = computed(() => store.getters['steps/age'])
     const step = computed(() => store.getters['steps/step'])
     const stepData = computed(() => questions[step.value - 1])
@@ -64,14 +65,20 @@ export default {
       store.commit('steps/goToNextStep')
     }
 
+    const fetchData = async () => {
+      await store.dispatch('steps/fetch')
+    }
+
     return {
       styles,
 
+      data,
       step,
       message,
       stepData,
       tomorrow,
 
+      fetchData,
       answerHandler,
     }
 

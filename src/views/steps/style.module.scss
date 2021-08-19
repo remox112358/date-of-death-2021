@@ -207,7 +207,9 @@
     }
 
     .terms {
-      margin-top: 15px;
+      @media screen and (max-width: $breakpoint--sm) {
+        margin-top: 15px;
+      }
     }
 
     .header {
@@ -319,6 +321,40 @@
           max-width: 250px;
 
           margin-top: 20px;
+        }
+      }
+
+      .data {
+        color: rgba(#fff, .6);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 10px;
+        margin-top: 15px;
+
+        max-width: 500px;
+
+        font-size: 20px;
+
+        border: 1px solid #fff;
+
+        &__value {
+          color: #fff;
+        }
+
+        @media screen and (max-width: $breakpoint--md) {
+          max-width: 300px;
+
+          font-size: 16px;
+
+          margin-top: 10px;
+        }
+
+        @media screen and (max-width: $breakpoint--sm) {
+          max-width: 250px;
+
+          font-size: 14px;
         }
       }
     }

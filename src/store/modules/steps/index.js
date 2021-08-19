@@ -1,8 +1,11 @@
+import axios from 'axios'
+
 export default {
   namespaced: true,
 
   state: () => ({
-    step: 1,
+    step: 6,
+    data: null,
     answers: [
       // ...
     ],
@@ -56,11 +59,41 @@ export default {
      */
     setAnswer: (state, payload) => {
       state.answers = [...state.answers, payload]
+    },
+
+    /**
+     * Sets the data.
+     * 
+     * @param {Object} state 
+     * @param {Any} payload 
+     */
+    setData: (state, payload) => {
+      state.data = payload
     }
 
   },
 
   actions: {
-    // ...
+    
+    fetch: context => {
+      return new Promise((resolve, reject) => {
+        context.commit('setLoading', true, { root: true })
+
+        axios
+          .get('https://swapi.dev/api/people/1/')
+          .then(response => {
+            context.commit('setData', response.data)
+
+            resolve()
+          })
+          .catch(error => {
+            reject()
+          })
+          .finally(() => {
+            context.commit('setLoading', false, { root: true })
+          })
+      })
+    }
+
   },
 }
