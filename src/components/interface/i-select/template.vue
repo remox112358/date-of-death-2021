@@ -3,6 +3,7 @@
     ref="root"
 
     :id="componentId"
+
     :class="{
       [styles.root]: true,
       [styles['root--invalid']]: invalid,
@@ -14,11 +15,7 @@
         <i-icon name="arrow-down" />
       </div>
     </div>
-    <div 
-      :class="styles.dropdown"
-
-      v-show="toggleStatus"
-    >
+    <div :class="styles.dropdown" v-show="toggleStatus">
       <div
         :key="option.value" 
         :class="styles.dropdown__item"

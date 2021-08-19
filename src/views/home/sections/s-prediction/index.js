@@ -11,6 +11,14 @@ export default {
   setup() {
 
     /**
+     * Data and states. 
+     */
+    const variants = [
+      { text: 'Да', value: 1 },
+      { text: 'Нет', value: 0 },
+    ]
+
+    /**
      * Handler of answer callback.
      * 
      * @param {Any} answer 
@@ -24,6 +32,7 @@ export default {
 
       glare,
       woman,
+      variants,
 
       answerHandler,
     }

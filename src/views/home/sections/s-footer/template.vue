@@ -1,21 +1,7 @@
 <template>
   <div :class="styles.root">
-    <div
-      :class="{
-        [styles.decoration]: true,
-        [styles['decoration--left']]: true,
-      }"
-    >
-      <i-icon name="decoration1" />
-    </div>
-    <div
-      :class="{
-        [styles.decoration]: true,
-        [styles['decoration--right']]: true,
-      }"
-    >
-      <i-icon name="decoration2" />
-    </div>
+    <p-decoration icon="decoration1" :htmlClass="{ [styles['decoration--left']]: true }"></p-decoration>
+    <p-decoration icon="decoration2" :htmlClass="{ [styles['decoration--right']]: true }"></p-decoration>
     <p-container>
       <div
         data-aos="fade-up"

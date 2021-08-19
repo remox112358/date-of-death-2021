@@ -5,28 +5,11 @@
       [styles['root--final']]: step === 6,
     }"
   >
-    <div
-      :class="{
-        [styles.decoration]: true,
-        [styles['decoration--left']]: true,
-      }"
-    >
-      <i-icon name="decoration1" />
-    </div>
-    <div
-      :class="{
-        [styles.decoration]: true,
-        [styles['decoration--right']]: true,
-      }"
-    >
-      <i-icon name="decoration2" />
-    </div>
+    <p-decoration icon="decoration1" :htmlClass="{ [styles['decoration--left']]: true }"></p-decoration>
+    <p-decoration icon="decoration2" :htmlClass="{ [styles['decoration--right']]: true }"></p-decoration>
     <div :class="styles.header">
       <p-container>
-        <p-message
-          :cloud="step >= 5"
-          :alternative="step === 6"
-        >
+        <p-message :cloud="step >= 5" :alternative="step === 6">
           <template v-if="step === 6">
             Спасибо за ваши ответы!<br>
             <b>Мы подготовили для вас персональную аудиозапись с вашим прогнозом.</b>
@@ -61,16 +44,7 @@
             Нажмите на кнопку ниже прямо сейчас и наберите наш номер телефона. Прослушайте важную информацию!
           </p>
           <i-button color="green" @click="fetchData">Позвонить и прослушать</i-button>
-          <div :class="styles.data" v-if="data">
-            <span>Name: <span :class="styles.data__value">{{ data.name }}</span></span>
-            <span>Height: <span :class="styles.data__value">{{ data.height }}</span></span>
-            <span>Mass: <span :class="styles.data__value">{{ data.mass }}</span></span>
-            <span>Hair color: <span :class="styles.data__value">{{ data.hair_color }}</span></span>
-            <span>Skin color: <span :class="styles.data__value">{{ data.skin_color }}</span></span>
-            <span>Eye color: <span :class="styles.data__value">{{ data.eye_color }}</span></span>
-            <span>Birth year: <span :class="styles.data__value">{{ data.birth_year }}</span></span>
-            <span>Gender: <span :class="styles.data__value">{{ data.gender }}</span></span>
-          </div>
+          <data-box :data="data" v-if="data" />
         </div>
         <div :class="styles.terms" v-if="step === 6">
           <p-terms />

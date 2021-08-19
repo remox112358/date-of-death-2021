@@ -11,11 +11,16 @@ import messages from './messages.json'
 
 import { sleep, getTomorrowDate } from '@/utils'
 
+import DataBox from './dataBox'
+
 import template from './template'
 import styles from './style.module.scss'
 
 export default {
   extends: template,
+  components: {
+    DataBox,
+  },
   setup() {
 
     /**

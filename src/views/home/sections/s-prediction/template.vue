@@ -18,15 +18,12 @@
           <img :src="woman" alt="Woman">
         </div>
         <div :class="styles.content__question">
-          <p-question 
+          <p-question
             title="Вас беспокоит вопрос о том, КОГДА ВЫ ПОКИНЕТЕ ЭТОТ МИР И ПРИ КАКИХ ОБСТОЯТЕЛЬСТВАХ?"
             subtitle="Онлайн предсказание"
 
+            :variants="variants"
             :callback="answerHandler"
-            :variants="[
-              { text: 'Да', value: 1 },
-              { text: 'Нет', value: 0 }
-            ]"
           />
         </div>
       </div>
