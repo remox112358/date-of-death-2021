@@ -1,13 +1,14 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   padding: calc(70px + (135px / 2)) 0 70px;
 
-  @media screen and (max-width: $breakpoint--md) {
+  @include screen('md') {
     padding: calc(50px + (100px / 2)) 0 50px;
   }
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('sm') {
     padding: calc(40px + (78px / 2)) 0 40px;
   }
 
@@ -28,19 +29,19 @@
     margin: 0 auto;
     padding: 0 40px;
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       height: 400px;
       max-width: 400px;
 
       padding: 0 20px;
     }
 
-    @media screen and (max-width: $breakpoint--md) {
+    @include screen('md') {
       height: 350px;
       max-width: 350px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       height: 250px;
       max-width: 255px;
     }
@@ -58,12 +59,12 @@
 
       transform: translate(-50%, -50%);
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         width: 100px;
         height: 100px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         width: 78px;
         height: 78px;
       }
@@ -81,33 +82,33 @@
       font-size: 25px;
       line-height: 35px;
       text-align: center;
-      font-family: $font--roboto;
+      font-family: map-get($FONTS, 'roboto');
 
       margin-top: 20px;
 
       color: #fff;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         font-size: 24px;
         line-height: 30px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         font-size: 20px;
         line-height: 25px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         font-size: 16px;
         line-height: 25px;
       }
       
       span {
-        color: $color--gold;
+        color: map-get($COLORS, 'gold');
 
-        font-family: $font--roboto-medium;
+        font-family: map-get($FONTS, 'roboto-medium');
 
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           font-size: 20px;
         }
       }

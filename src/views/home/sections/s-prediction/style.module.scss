@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   overflow: hidden;
@@ -9,7 +10,7 @@
 
   min-height: 940px;
 
-  @media screen and (max-width: $breakpoint--lg) {
+  @include screen('lg') {
     min-height: auto;
   }
 
@@ -23,15 +24,15 @@
     
     color: rgba(#fff, .6);
     
-    font-family: $font--roboto-light;
+    font-family: map-get($FONTS, 'roboto-light');
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       padding-top: 20px;
 
       margin-bottom: 20px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       padding-top: 10px;
 
       margin-bottom: 10px;
@@ -41,12 +42,12 @@
       font-size: 16px;
       line-height: 18.75px;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         font-size: 14px;
         line-height: 16px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         font-size: 12px;
         line-height: 14.06px;
       }
@@ -60,11 +61,11 @@
 
       background-color: rgba(#fff, .2);
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         margin: 10px 0;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         margin: 7.5px 0;
       }
     }
@@ -73,12 +74,12 @@
       font-size: 25px;
       line-height: 29.3px;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         font-size: 22.5px;
         line-height: 26.5px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         font-size: 20px;
         line-height: 23.44px;
       }
@@ -101,12 +102,12 @@
 
         color: rgba(#fff, .2);
 
-        @media screen and (max-width: $breakpoint--lg) {
+        @include screen('lg') {
           width: 300px;
           height: 300px;
         }
 
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           width: 240px;
           height: 240px;
         }
@@ -123,12 +124,12 @@
 
         transform: translate(-50%, -50%);
 
-        @media screen and (max-width: $breakpoint--lg) {
+        @include screen('lg') {
           width: 170px;
           height: 170px;
         }
 
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           width: 137px;
           height: 137px;
         }
@@ -138,7 +139,7 @@
     &__question {
       max-width: 500px;
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         max-width: 270px;
       }
     }
@@ -155,21 +156,21 @@
 
     z-index: -1;
 
-    @media screen and (max-width: $breakpoint--xl) {
+    @include screen('xl') {
       height: 1019px;
     }
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       top: 0;
       
       height: 700px;
     }
 
-    @media screen and (max-width: $breakpoint--md) {
+    @include screen('md') {
       height: 500px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       width: 600px;
       height: 400px;
       

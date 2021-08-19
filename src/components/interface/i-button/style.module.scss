@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   cursor: pointer;
@@ -30,14 +31,14 @@
     }
   }
 
-  @media screen and (max-width: $breakpoint--lg) {
+  @include screen('lg') {
     width: 240px;
     height: 55px;
 
     font-size: 16px;
   }
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('lg') {
     width: 180px;
     height: 40px;
 
@@ -80,11 +81,11 @@
   }
 
   &--gold {
-    background: $color--gold-gradient;
+    background: map-get($COLORS, 'gold-gradient');
   }
 
   &--green {
-    background: $color--green-gradient;
+    background: map-get($COLORS, 'green-gradient');
   }
 }
 

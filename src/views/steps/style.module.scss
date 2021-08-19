@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   height: 100vh;
@@ -11,15 +12,15 @@
   display: grid;
   grid-template-rows: 225px auto;
 
-  @media screen and (max-width: $breakpoint--lg) {
+  @include screen('lg') {
     grid-template-rows: 175px auto;
   }
 
-  @media screen and (max-width: $breakpoint--md) {
+  @include screen('md') {
     grid-template-rows: 150px auto;
   }
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('sm') {
     grid-template-rows: 125px auto;
   }
 
@@ -35,7 +36,7 @@
       left: 400px;
       bottom: 80px;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         left: 20px;
         bottom: 100px;
         
@@ -43,7 +44,7 @@
         height: 120px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         left: 20px;
         bottom: 100px;
         
@@ -51,7 +52,7 @@
         height: 90px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         left: -15px;
         bottom: 100px;
         
@@ -67,19 +68,19 @@
       right: 400px;
       top: 100px;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         right: 20px;
         
         width: 170px;
         height: 95px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         width: 140px;
         height: 75px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         top: 20px;
         right: -30px;
         
@@ -105,19 +106,19 @@
       font-size: 25px;
       line-height: 35px;
       text-align: center;
-      font-family: $font--badscript;
+      font-family: map-get($FONTS, 'badscript');
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         font-size: 20px;
         line-height: 25px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         font-size: 18px;
         line-height: 24px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         font-size: 14px;
         line-height: 20px;
 
@@ -134,7 +135,7 @@
 
         border-radius: 5px;
         
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           padding: 10px;
         }
 
@@ -153,7 +154,7 @@
           
           background: linear-gradient(45deg, transparent 50%, #fff 50%);
 
-          @media screen and (max-width: $breakpoint--sm) {
+          @include screen('sm') {
             width: 10px;
             height: 10px;
           }
@@ -161,7 +162,7 @@
       }
 
       &--final {
-        font-family: $font--roboto;
+        font-family: map-get($FONTS, 'roboto');
       }
     }
   }
@@ -169,7 +170,7 @@
   .main {
     padding: 70px 0 30px;
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       padding: 20px 0;
     }
 
@@ -187,7 +188,7 @@
 
       max-width: 500px;
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         display: flex;
         align-items: center;
       }
@@ -195,10 +196,10 @@
   }
 
   &--final {
-    overflow: auto;
+    overflow-y: auto;
 
     height: auto;
-    max-height: auto;
+    max-height: initial;
 
     .main {
       > div {
@@ -207,7 +208,7 @@
     }
 
     .terms {
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         margin-top: 15px;
       }
     }
@@ -233,21 +234,21 @@
         font-size: 25px;
         line-height: 35px;
         text-align: center;
-        font-family: $font--roboto-light;
+        font-family: map-get($FONTS, 'roboto-light');
 
         max-width: 500px;
 
-        @media screen and (max-width: $breakpoint--lg) {
+        @include screen('lg') {
           font-size: 20px;
           line-height: 25px;
         }
   
-        @media screen and (max-width: $breakpoint--md) {
+        @include screen('md') {
           font-size: 18px;
           line-height: 24px;
         }
   
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           font-size: 14px;
           line-height: 20px;
 
@@ -262,7 +263,7 @@
 
         margin: 30px 0;
 
-        color: $color--gold;
+        color: map-get($COLORS, 'gold');
 
         font-size: 26px;
         line-height: 35px;
@@ -271,14 +272,14 @@
         border-radius: 3px;
         border: 1px solid #fff;
 
-        @media screen and (max-width: $breakpoint--lg) {
+        @include screen('lg') {
           font-size: 22px;
           line-height: 30px;
 
           padding: 25px;
         }
   
-        @media screen and (max-width: $breakpoint--md) {
+        @include screen('md') {
           font-size: 18px;
           line-height: 28px;
 
@@ -292,7 +293,7 @@
           }
         }
   
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           font-size: 16px;
           line-height: 25px;
 
@@ -311,12 +312,12 @@
 
         margin-top: 30px;
 
-        @media screen and (max-width: $breakpoint--md) {
+        @include screen('md') {
           height: 60px;
           max-width: 275px;
         }
 
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           height: 50px;
           max-width: 250px;
 

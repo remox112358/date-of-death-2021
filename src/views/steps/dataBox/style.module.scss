@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   display: flex;
@@ -23,7 +24,7 @@
     margin-left: 5px;
   }
 
-  @media screen and (max-width: $breakpoint--md) {
+  @include screen('md') {
     max-width: 300px;
 
     font-size: 16px;
@@ -31,7 +32,7 @@
     margin-top: 10px;
   }
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('sm') {
     max-width: 250px;
 
     font-size: 14px;

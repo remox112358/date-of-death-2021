@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   position: relative;
@@ -7,15 +8,15 @@
 
   overflow: hidden;
 
-  @media screen and (max-width: $breakpoint--lg) {
+  @include screen('lg') {
     padding: 100px 0;
   }
 
-  @media screen and (max-width: $breakpoint--md) {
+  @include screen('md') {
     padding: 75px 0;
   }
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('sm') {
     padding: 50px 0;
   }
 
@@ -24,12 +25,12 @@
       left: 150px;
       bottom: 50px;
 
-      @media screen and (max-width: $breakpoint--xl) {
+      @include screen('xl') {
         left: -100px;
         bottom: 50px;
       }
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         left: 20px;
         bottom: 100px;
         
@@ -37,7 +38,7 @@
         height: 120px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         left: 20px;
         bottom: 100px;
         
@@ -45,7 +46,7 @@
         height: 90px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         left: -15px;
         bottom: 70px;
         
@@ -58,12 +59,12 @@
       right: 150px;
       bottom: 350px;
 
-      @media screen and (max-width: $breakpoint--xl) {
+      @include screen('xl') {
         right: -110px;
         bottom: 350px;
       }
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         right: 20px;
         bottom: 500px;
         
@@ -71,7 +72,7 @@
         height: 95px;
       }
 
-      @media screen and (max-width: $breakpoint--md) {
+      @include screen('md') {
         right: 20px;
         bottom: 500px;
         
@@ -79,7 +80,7 @@
         height: 75px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         right: -30px;
         bottom: 240px;
         
@@ -92,11 +93,11 @@
   .question {
     margin-bottom: 100px;
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       margin-bottom: 80px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       margin-bottom: 60px;
     }
   }

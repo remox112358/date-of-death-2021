@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+@mixin screen ($breakpoint) {
+  @if (map-has-key($SCREENS, $breakpoint)) {
+    @media screen and (max-width: map-get($SCREENS, $breakpoint)) {
+      @content;
+    }
+  }
+}

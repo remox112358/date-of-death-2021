@@ -55,9 +55,9 @@
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    font-family: $font--roboto, $font--alternative;
+    font-family: map-get($FONTS, 'roboto'), map-get($FONTS, 'alternative');
 
-    background-color: $color--background;
+    background-color: map-get($COLORS, 'background');
   }
 
 </style>

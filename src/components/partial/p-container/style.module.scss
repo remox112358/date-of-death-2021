@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   width: 100%;
@@ -7,7 +8,7 @@
   margin: 0 auto;
   padding: 0 30px;
 
-  @media screen and (max-width: $breakpoint--sm) {
+  @include screen('sm') {
     padding: 0 10px;
   }
 

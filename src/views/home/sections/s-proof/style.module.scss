@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   .content {
@@ -17,11 +18,11 @@
     background-position: center;
     background-image: url('../../../../assets/images/background.png');
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       height: 500px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       height: 330px;
 
       background-image: url('../../../../assets/images/background--mobile.png');
@@ -36,7 +37,7 @@
 
       color: #fff;
   
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         font-size: 16px;
 
         line-height: 25px;
@@ -45,9 +46,9 @@
       }
 
       span {
-        color: $color--gold;
+        color: map-get($COLORS, 'gold');
 
-        @media screen and (max-width: $breakpoint--sm) {
+        @include screen('sm') {
           font-size: 20px;
         }
       }

@@ -1,4 +1,5 @@
 @import '@/scss/variables.scss';
+@import '@/scss/mixins.scss';
 
 .root {
   display: flex;
@@ -7,7 +8,7 @@
 
   text-align: center;
 
-  color: $color--gold;
+  color: map-get($COLORS, 'gold');
 
   .title {
     font-size: 25px;
@@ -15,14 +16,14 @@
 
     margin-bottom: 45px;
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       font-size: 20px;
       line-height: 30px;
 
       margin-bottom: 30px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       font-size: 16px;
       line-height: 25px;
 
@@ -38,11 +39,11 @@
     > *:not(:last-child) {
       margin-bottom: 35px;
 
-      @media screen and (max-width: $breakpoint--lg) {
+      @include screen('lg') {
         margin-bottom: 25px;
       }
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         margin-bottom: 20px;
       }
     }
@@ -53,18 +54,18 @@
 
     font-size: 16px;
     line-height: 18.75px;
-    font-family: $font--roboto-light;
+    font-family: map-get($FONTS, 'roboto-light');
 
     color: rgba(#fff, .6);
 
-    @media screen and (max-width: $breakpoint--lg) {
+    @include screen('lg') {
       font-size: 14px;
       line-height: 16px;
      
       margin-top: 25px;
     }
 
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       font-size: 12px;
       line-height: 14px;
 
@@ -73,14 +74,14 @@
   }
 
   &--full {
-    @media screen and (max-width: $breakpoint--sm) {
+    @include screen('sm') {
       align-items: center;
     }
 
     .subtitle {
       margin-top: auto;
 
-      @media screen and (max-width: $breakpoint--sm) {
+      @include screen('sm') {
         margin-top: 40px;
       }
     }
