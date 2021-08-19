@@ -1,4 +1,13 @@
 /**
+ * Sleep async function.
+ * 
+ * @param {Number} ms 
+ */
+export const sleep = ms => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+/**
  * Generates random string.
  *
  * @param {number} length - Length of generated string
@@ -83,12 +92,6 @@ export const getYearsOptions = () => {
  */
 export const dayExistInMonth = (day, month, year) => {
   return day < getDaysOptions(month, year).length
-}
-
-function getTomorrow() {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1); // even 32 is acceptable
-  return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
 }
 
 /**

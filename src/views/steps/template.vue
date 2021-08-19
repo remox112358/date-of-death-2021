@@ -23,28 +23,18 @@
     </div>
     <div :class="styles.header">
       <p-container>
-        <p
-          :class="{
-            [styles.header__message]: true,
-            [styles['header__message--cloud']]: true,
-            [styles['header__message--final']]: true,
-          }"
-
-          v-if="step === 6"
+        <p-message
+          :cloud="step >= 5"
+          :alternative="step === 6"
         >
-          Спасибо за ваши ответы!<br>
-          <b>Мы подготовили для вас персональную аудиозапись с вашим прогнозом.</b>
-        </p>
-        <p
-          :class="{
-            [styles.header__message]: true,
-            [styles['header__message--cloud']]: message,
-          }"
-
-          v-else
-        >
-          {{ stepData?.message ?? message }}
-        </p>
+          <template v-if="step === 6">
+            Спасибо за ваши ответы!<br>
+            <b>Мы подготовили для вас персональную аудиозапись с вашим прогнозом.</b>
+          </template>
+          <template v-else>
+            {{ stepData?.message ?? message }}
+          </template>
+        </p-message>
       </p-container>
     </div>
     <div :class="styles.main">

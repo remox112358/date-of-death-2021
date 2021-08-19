@@ -9,7 +9,7 @@ import { useStore } from 'vuex'
 import questions from './questions.json'
 import messages from './messages.json'
 
-import { getTomorrowDate } from '@/utils'
+import { sleep, getTomorrowDate } from '@/utils'
 
 import template from './template'
 import styles from './style.module.scss'
@@ -33,14 +33,6 @@ export default {
      * Watcher for step value.
      */
     watch(step, value => {
-      if (value === 4) {
-        store.commit('setLoading', true)
-
-        setTimeout(() => {
-          store.commit('setLoading', false)
-        }, 2000)
-      }
-
       if (value === 5) {
         if (age.value <= 35)
           message.value = messages[0]
@@ -52,12 +44,22 @@ export default {
 
       if (value === 6) {
         message.value = messages[3]
-        
-        store.commit('setRecording', true)
       }
     })
+    
+    const answerHandler = async answer => {
+      if (step.value === 3) {
+        store.commit('setLoading', true)
 
-    const answerHandler = answer => {
+        await sleep(2000)
+          
+        store.commit('setLoading', false)
+      }
+
+      if (step.value === 5) {
+        store.commit('setRecording', true)
+      }
+
       store.commit('steps/setAnswer', answer)
       store.commit('steps/goToNextStep')
     }
